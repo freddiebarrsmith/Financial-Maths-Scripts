@@ -5,7 +5,7 @@ investment = 2000000
 currentvalue = 45
 price = currentvalue
 facevalue = 100
-couponrate = 12
+couponrate = 4
 pikbondrate = 8 
 expectedcurrentvalue = 80
 yearstomaturity = 4 - 1 
@@ -55,16 +55,23 @@ def totalreturn(ytm, investment, currentvalue, facevalue, pikbondrate, yearstoma
 
 	increaseinprincipal = (investment / currentvalue) * facevalue
 	increaseinprincipal = increaseinprincipal - investment
+	print("increaseinprincipal")
 	print(increaseinprincipal)
 	#investment = 100
 
 
 
-	increasefromytm = ytm * (investment / 100)
+	increasefromytm = (ytm / 100) * investment 
+	print("increasefromytm")
 	print(increasefromytm)
+
 	pikbondinvestmentmaturityvalue = yieldtomaturitypikbond(couponrate, pikbondrate, investment, yearstomaturity)
+	print("pikmaturity")
+	print(pikbondinvestmentmaturityvalue)
+
+
 	totalreturnprice = increasefromytm + increaseinprincipal + pikbondinvestmentmaturityvalue
-	
+	#totalreturnprice = pikbondinvestmentmaturityvalue
 	
 
 	return totalreturnprice
