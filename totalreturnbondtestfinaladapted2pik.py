@@ -80,4 +80,5 @@ def totalreturn(ytm, investment, currentvalue, facevalue, pikbondrate, yearstoma
 
 
 totalreturnis = totalreturn(ytm,investment,currentvalue,facevalue,pikbondrate,yearstomaturity)
+print("total return")
 print(totalreturnis)
